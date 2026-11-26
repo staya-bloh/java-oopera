@@ -24,11 +24,9 @@ public class Show {
     }
 
     public void addActor(Actor newActor) {
-        for (Actor actor : listOfActors) {
-            if (actor.getName().equals(newActor.getName()) && actor.getSurname().equals(newActor.getSurname()) && actor.getHeight() == newActor.getHeight()) {
-                System.out.println("Такой актер уже присутствует!");
-                return;
-            }
+        if (listOfActors.contains(newActor)) {
+            System.out.println("Такой актер уже присутствует!");
+            return;
         }
         listOfActors.add(newActor);
     }
